@@ -29,23 +29,22 @@ namespace Threading
         private void DoTimeConsumingWorkButtonClicked(object sender, RoutedEventArgs e)
         {
             DoTimeConsumingWork_Button.IsEnabled = false;
-            Task.Factory.StartNew(
-                () =>
-                {
-                    Thread.Sleep(5000);
-                }
-                );
-            DoTimeConsumingWork_Button.IsEnabled = true;
+
+            var task = new Task(DoTimeConsumingWork);
+
+            task.Start();
         }
 
+        private void DoTimeConsumingWork()
+        {
+            Thread.Sleep(5000);
+        }
         private void PrintNumbersButtonClicked(object sender, RoutedEventArgs e)
         {
-            PrintNumbersButton.IsEnabled = false;
             for (int i = 1; i <= 10; i++)
             {
                 ListBoxOfNumbers.Items.Add(i);
             }
-            PrintNumbersButton.IsEnabled = true;
         }
     }
 }
