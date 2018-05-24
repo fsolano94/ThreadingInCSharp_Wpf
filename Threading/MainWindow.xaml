@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="DoTimeConsumingWork_Button" Content="Do Time Consuming Work&#xD;&#xA;" HorizontalAlignment="Left" Margin="164,56,0,0" VerticalAlignment="Top" Width="195" Height="35" RenderTransformOrigin="0.748,0.622" Click="Button_Click"/>
-        <Button x:Name="PrintNumbersButton" Content="Print Numbers" HorizontalAlignment="Left" Margin="164,105,0,0" VerticalAlignment="Top" Width="195" RenderTransformOrigin="0.297,-0.137" Height="32" Click="Button_Click"/>
+        <Button x:Name="DoTimeConsumingWork_Button" Content="Do Time Consuming Work&#xD;&#xA;" HorizontalAlignment="Left" Margin="164,56,0,0" VerticalAlignment="Top" Width="195" Height="35" RenderTransformOrigin="0.748,0.622" Click="DoTimeConsumingWorkButtonClicked"/>
+        <Button x:Name="PrintNumbersButton" Content="Print Numbers" HorizontalAlignment="Left" Margin="164,105,0,0" VerticalAlignment="Top" Width="195" RenderTransformOrigin="0.297,-0.137" Height="32" Click="PrintNumbersButtonClicked"/>
         <ListBox x:Name="ListBoxOfNumbers" HorizontalAlignment="Left" Height="144" Margin="164,142,0,0" VerticalAlignment="Top" Width="195"/>
 
     </Grid>

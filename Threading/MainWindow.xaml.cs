@@ -26,29 +26,26 @@ namespace Threading
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DoTimeConsumingWorkButtonClicked(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (button.Name == "DoTimeConsumingWork_Button")
-            {
-                DoTimeConsumingWork_Button.IsEnabled = false;
-                Task.Factory.StartNew(
-                    () =>
-                    {
-                        Thread.Sleep(5000);
-                    }
-                    );
-                DoTimeConsumingWork_Button.IsEnabled = true;
-            }
-
-            if (button.Name == "PrintNumbersButton")
-            {
-                for (int i = 1; i <= 10; i++)
+            DoTimeConsumingWork_Button.IsEnabled = false;
+            Task.Factory.StartNew(
+                () =>
                 {
-                    ListBoxOfNumbers.Items.Add(i);
+                    Thread.Sleep(5000);
                 }
+                );
+            DoTimeConsumingWork_Button.IsEnabled = true;
+        }
+
+        private void PrintNumbersButtonClicked(object sender, RoutedEventArgs e)
+        {
+            PrintNumbersButton.IsEnabled = false;
+            for (int i = 1; i <= 10; i++)
+            {
+                ListBoxOfNumbers.Items.Add(i);
             }
+            PrintNumbersButton.IsEnabled = true;
         }
     }
 }
